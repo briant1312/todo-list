@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body    {
     display: flex;
     justify-content: center;
@@ -8,6 +13,7 @@ label {
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
     color: rgb(63, 63, 63);
+    margin-left: 1rem;
 }
 
 label.active:hover {
@@ -37,13 +43,21 @@ button {
 #addNewTask {
     background-color: rgb(187, 189, 190);
     transition: all  200ms;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
 }
 
 #addNewTask:hover {
-    transform: translateY(-0.1rem);
-    box-shadow: 3px 3px 3px white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px white;
     color: white;
     cursor: pointer;
+}
+
+#addNewTask:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px white;
 }
 
 #deleteCompletedTasks {
@@ -51,13 +65,22 @@ button {
     color: azure;
     margin-left: 1rem;
     transition: all  200ms;
+    position: absolute;
+    top: -1rem;
+    left: 12rem;
+    min-width: 16.3rem;
 }
 
 #deleteCompletedTasks:hover {
-    transform: translateY(-0.1rem);
-    box-shadow: 3px 3px 3px rgb(37, 226, 226);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgb(37, 226, 226);
     color: rgb(37, 226, 226);
     cursor: pointer;
+}
+
+#deleteCompletedTasks:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgb(37, 226, 226);
 }
 
 input[type=checkbox] {
@@ -90,9 +113,26 @@ input[type=checkbox] {
     flex-direction: column;
     width: 50%;
     min-height: 90vh;
+    position: relative;
 }
 
 .completedTasks {
     text-decoration: line-through rgb(243, 60, 60);
     color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 62.5em) {
+    .container {
+        width: 60%;
+    }
+
+    :root {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 45.63em) {
+    .container {
+        width: 80%;
+    }
 }
