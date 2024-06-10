@@ -40,49 +40,6 @@ button {
     margin-left: 1rem;
 }
 
-#addNewTask {
-    background-color: rgb(187, 189, 190);
-    transition: all  200ms;
-    position: absolute;
-    top: -1rem;
-    left: 1rem;
-}
-
-#addNewTask:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px white;
-    color: white;
-    cursor: pointer;
-}
-
-#addNewTask:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 2px white;
-}
-
-#deleteCompletedTasks {
-    background-color: rgb(56, 56, 56);
-    color: azure;
-    margin-left: 1rem;
-    transition: all  200ms;
-    position: absolute;
-    top: -1rem;
-    left: 12rem;
-    min-width: 16.3rem;
-}
-
-#deleteCompletedTasks:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgb(37, 226, 226);
-    color: rgb(37, 226, 226);
-    cursor: pointer;
-}
-
-#deleteCompletedTasks:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 2px rgb(37, 226, 226);
-}
-
 input[type=checkbox] {
     width: 1.3rem;
     height: 1.3rem;
@@ -91,9 +48,7 @@ input[type=checkbox] {
 
 #list {
     border-radius: 1rem;
-    min-height: 80%;
-    margin-top: 2rem;
-    margin-left: 2rem;
+    height: 100%;
     background: url(images/paper.avif);
     background-size: cover;
     max-width: 800px;
@@ -112,13 +67,50 @@ input[type=checkbox] {
     justify-content: center;
     flex-direction: column;
     width: 50%;
-    min-height: 90vh;
+    min-height: 95vh;
     position: relative;
+    padding-top: 1em;
 }
 
 .completedTasks {
     text-decoration: line-through rgb(243, 60, 60);
     color: rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+    display: none;
+    flex-wrap: wrap;
+}
+
+.modal-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+    gap: 2em;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.85);
+}
+
+.modal-background.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-container {
+    display: flex;
+    padding: 3em;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 62.5em) {
